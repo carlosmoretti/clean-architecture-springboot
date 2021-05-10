@@ -2,8 +2,12 @@ package com.poc.cleanarch.infrastructure.mapper.greeting;
 
 import com.poc.cleanarch.infrastructure.data.model.GreetingModel;
 import com.poc.cleanarch.infrastructure.mapper.Mapper;
+
+import org.springframework.stereotype.Component;
+
 import com.poc.cleanarch.core.greeting.Greeting;
 
+@Component
 public class GreetingMapping implements Mapper<Greeting, GreetingModel> {
 
 	@Override

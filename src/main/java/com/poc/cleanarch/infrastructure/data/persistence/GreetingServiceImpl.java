@@ -2,13 +2,19 @@ package com.poc.cleanarch.infrastructure.data.persistence;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.poc.cleanarch.core.greeting.Greeting;
 import com.poc.cleanarch.core.greeting.ports.GreetingService;
+import com.poc.cleanarch.infrastructure.data.model.GreetingModel;
+import com.poc.cleanarch.infrastructure.mapper.greeting.GreetingMapping;
 
 @Service
 public class GreetingServiceImpl implements GreetingService {
+	
+	@Autowired
+	GreetingMapping greetingMapping;
 
 	@Override
 	public List<Greeting> getAll() {
@@ -24,8 +30,8 @@ public class GreetingServiceImpl implements GreetingService {
 
 	@Override
 	public void add(Greeting obj) {
-		// TODO Auto-generated method stub
-		
+		GreetingModel model = greetingMapping.toDto(obj);
+		System.out.println(model.getTitulo());
 	}
 
 	@Override

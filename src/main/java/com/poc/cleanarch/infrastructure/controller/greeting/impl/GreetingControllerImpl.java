@@ -25,9 +25,12 @@ public class GreetingControllerImpl implements GreetingController {
 	@Override
 	@GetMapping
 	public List<Greeting> getAll() {
+		
+		Greeting mock = new Greeting(0L, "Teste", new Date());
+		
 		// TODO Auto-generated method stub
 		try {
-			createGreetingUsecase.execute(new Greeting(0L, "Teste", new Date()));
+			createGreetingUsecase.execute(mock);
 		} catch(GreetingAlreadyExistsException ex) {
 			ex.printStackTrace();
 		}

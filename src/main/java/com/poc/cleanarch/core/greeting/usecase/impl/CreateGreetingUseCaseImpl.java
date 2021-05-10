@@ -1,5 +1,6 @@
 package com.poc.cleanarch.core.greeting.usecase.impl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.poc.cleanarch.core.greeting.Greeting;
@@ -7,7 +8,7 @@ import com.poc.cleanarch.core.greeting.exception.GreetingAlreadyExistsException;
 import com.poc.cleanarch.core.greeting.ports.GreetingService;
 import com.poc.cleanarch.core.greeting.usecase.CreateGreetingUseCase;
 
-@Service
+@Component
 public class CreateGreetingUseCaseImpl implements CreateGreetingUseCase {
 	
 	@Autowired
